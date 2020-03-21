@@ -3,6 +3,7 @@ package dev.rjp.rpg;
 
 import dev.rjp.rpg.display.Display;
 import dev.rjp.rpg.gfx.Assets;
+import dev.rjp.rpg.handler.Handler;
 import dev.rjp.rpg.input.KeyManager;
 import dev.rjp.rpg.input.MouseManager;
 import dev.rjp.rpg.states.GameState;
@@ -13,6 +14,8 @@ import java.awt.image.BufferStrategy;
 import dev.rjp.rpg.states.State;
 
 public class Game implements Runnable{
+    
+    private Handler handler;
     
     Thread t;
     private boolean running;
@@ -40,6 +43,8 @@ public class Game implements Runnable{
         
          keymanager = new KeyManager();
          mousemanager = new MouseManager();
+         
+         handler = new Handler(this);
 
     }
     

@@ -23,6 +23,14 @@ public class MouseManager implements MouseListener, MouseMotionListener
         return right;
     }
     
+    public boolean isLeftReleased(){
+        return !left;
+    }
+    
+    public boolean isRightReleased(){
+        return !right;
+    }
+    
     public int getMx(){
         return mx;
     }
