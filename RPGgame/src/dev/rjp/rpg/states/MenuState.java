@@ -44,7 +44,7 @@ public class MenuState extends State{
         g.setFont(new Font("Nyala", Font.BOLD, 150));
         g.setColor(Color.WHITE);
         
-        g.drawString("RPG GAME",(game.getWidth()/2)-300, 200);
+        g.drawImage(Assets.title, 30, 30, 1040, 300,null);
         playButton.render(g);
         helpButton.render(g);
         quitButton.render(g);

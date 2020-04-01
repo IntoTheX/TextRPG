@@ -41,4 +41,13 @@ public class Animation {
     public void addSpeed(int speed){
         this.speed -= speed;
     }
+    
+    public boolean isDone(){
+        if(getCurrentImage()==frames[frames.length-1]){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
 }

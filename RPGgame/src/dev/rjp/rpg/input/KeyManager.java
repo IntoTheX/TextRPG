@@ -9,17 +9,17 @@ public class KeyManager implements KeyListener{
     
     public boolean[] keys;
     
-    public boolean jump, crouch;
-    private boolean isPressed = true;
+    public boolean up, down, left, right;
     
     public KeyManager(){
         keys = new boolean[256];
     }
     
     public void tick(){
-        jump = (keys[KeyEvent.VK_W]||keys[KeyEvent.VK_UP]||keys[KeyEvent.VK_SPACE]);
-        crouch = (keys[KeyEvent.VK_S]||keys[KeyEvent.VK_DOWN]);
-        
+        up= (keys[KeyEvent.VK_W]);
+        down = (keys[KeyEvent.VK_S]);
+        left= (keys[KeyEvent.VK_A]);
+        right = (keys[KeyEvent.VK_D]); 
     }
 
     @Override
@@ -30,7 +30,6 @@ public class KeyManager implements KeyListener{
     @Override
     public void keyPressed(KeyEvent e) {
          keys[e.getKeyCode()] = true;
-         
     }
 
     @Override

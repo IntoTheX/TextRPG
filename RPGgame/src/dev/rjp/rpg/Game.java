@@ -8,10 +8,12 @@ import dev.rjp.rpg.input.KeyManager;
 import dev.rjp.rpg.input.MouseManager;
 import dev.rjp.rpg.states.GameState;
 import dev.rjp.rpg.states.HelpState;
+import dev.rjp.rpg.states.LoadingScreen;
 import dev.rjp.rpg.states.MenuState;
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
 import dev.rjp.rpg.states.State;
+import dev.rjp.rpg.states.Storyline;
 
 public class Game implements Runnable{
     
@@ -33,6 +35,8 @@ public class Game implements Runnable{
     State gameState ;
     State menuState;
     State helpState;
+    State loading;
+    State storyLine;
     
     //Constructor
     public Game(String title, int width, int height){
@@ -100,8 +104,10 @@ public class Game implements Runnable{
         gameState = new GameState(this);
         menuState = new MenuState(this);
         helpState = new HelpState(this);
+        loading = new LoadingScreen(this);
+        storyLine = new Storyline(this);
         
-        State.setState(menuState);
+        State.setState(loading);
       
     }
     
@@ -175,5 +181,8 @@ public class Game implements Runnable{
 
     public void setHelp() {
         State.setState(helpState);
+    }
+    public void setStory(){
+        State.setState(storyLine);
     }
 }
